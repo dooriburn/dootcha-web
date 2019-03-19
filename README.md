@@ -1,4 +1,4 @@
-# Dootcha
+# dootcha-web
 
 > 두리번의 Watcha 따라잡기 🎥🎥
 

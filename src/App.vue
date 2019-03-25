@@ -9,40 +9,41 @@
     >
       <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-spacer></v-spacer>
-      <v-toolbar-title class="display-2">DOOTCHA</v-toolbar-title>
+      <v-toolbar-title class="display-2">
+        <button onclick="location.href='/'">
+          DOOTCHA
+        </button>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon>
+      <v-btn icon
+      to="/user"
+      >
         <v-icon medium>account_circle</v-icon>
       </v-btn>
     </v-toolbar>
-
-    <v-layout row pb-2>
-      <v-flex xs8 offset-xs2>
-        <v-card class="card--flex-toolbar">
-          <v-toolbar card prominent>
-            <v-spacer></v-spacer>
-              <v-flex xs12>
-                <v-text-field
-                  placeholder="당신이 검색하고 싶은 영화/감독/배우를 입력하세요."
-                  solo
-                  background-color="rgba(0,0,0,0)"
-                  flat
-                ></v-text-field>
-              </v-flex>
-            <v-spacer></v-spacer>
-            <v-icon>search</v-icon>
-          </v-toolbar>
-          <v-divider></v-divider>
-        </v-card>
-      </v-flex>
-    </v-layout>
+    <template v-if="ok">
+      <v-layout class="card--flex-toolbar" align-center justify-center fill-height>
+          <v-flex xs8 offset-x2>
+            <v-text-field
+              placeholder="당신이 검색하고 싶은 🎥영화/감독/배우를 입력하세요."
+              solo
+              background-color="primary"
+              append-icon="search"
+            ></v-text-field>
+          </v-flex>
+      </v-layout>
+    </template>
     <router-view></router-view>
   </v-card>
 </template>
 
 <script>
 export default {
-  
+  data () {
+    return {
+      ok : false
+    }
+  }
 }
 </script>
 
@@ -51,4 +52,5 @@ export default {
   .card--flex-toolbar {
     margin-top: -30px;
   }
+  
 </style>

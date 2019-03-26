@@ -21,18 +21,6 @@
         <v-icon medium>account_circle</v-icon>
       </v-btn>
     </v-toolbar>
-    <template v-if="ok">
-      <v-layout class="card--flex-toolbar" align-center justify-center fill-height>
-          <v-flex xs8 offset-x2>
-            <v-text-field
-              placeholder="당신이 검색하고 싶은 🎥영화/감독/배우를 입력하세요."
-              solo
-              background-color="primary"
-              append-icon="search"
-            ></v-text-field>
-          </v-flex>
-      </v-layout>
-    </template>
     <router-view></router-view>
   </v-card>
 </template>
@@ -41,7 +29,6 @@
 export default {
   data () {
     return {
-      ok : false
     }
   }
 }

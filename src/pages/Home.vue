@@ -1,6 +1,24 @@
 <template>
     <v-layout justify-center>
+      <!-- <template>
+        <v-layout class="card--flex-toolbar" align-center justify-center fill-height> -->
+            <!-- <v-flex xs8 offset-x2>  -->
+              
+            <!-- </v-flex> -->
+        <!-- </v-layout>
+      </template> -->
     <v-flex xs12 sm6>
+      <v-layout style="margin-top: -25px">
+        <v-flex>
+          <v-text-field
+            placeholder="당신이 검색하고 싶은 🎥영화/감독/배우를 입력하세요."
+            solo
+            background-color="primary"
+            append-icon="search"
+          ></v-text-field>      
+        </v-flex>
+      </v-layout>
+      
       <v-card>
         <v-container
           fluid

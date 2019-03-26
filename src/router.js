@@ -12,7 +12,7 @@ const baseRoutes = [
     component: Home
   },
   {
-    path: '/:uid', 
+    path: '/user', 
     name: 'userpage',
     component: UserPage
   },

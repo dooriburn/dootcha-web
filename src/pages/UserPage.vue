@@ -12,7 +12,7 @@
       >
     <v-avatar
       class="margin-top--120"
-      size=200px
+      size= 200px
       color="grey lighten-4"
     >
       <img src="../assets/doori.jpg" alt="avatar">
@@ -21,7 +21,6 @@
 
       <v-flex
         xs4
-        lg4
         align-center
         justify-start
         layout
@@ -47,17 +46,42 @@
       </v-flex>
 
       <v-flex style="margin-top: -80px">
-        <v-btn color="#32BEBE" dark>팔로워</v-btn>
-        <v-btn color="#37C3C3" dark>팔로잉</v-btn>
+        <v-btn color="#32BEBE" dark
+          to="/user/follow"
+        >팔로워</v-btn>
+        <v-btn color="#37C3C3" dark
+          to="/user/follow"
+        >팔로잉</v-btn>
       </v-flex>
     </v-layout>
-    
+    <router-link></router-link>
   </v-container>
 </template>
 
 <script>
 export default {
-
+  data: () => ({
+    window : {
+      width : 0, 
+      height: 0
+    }, 
+    
+  }),
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      // this.window.width = window.innerWidth;
+      // this.window.height = window.innerHeight;
+      this.avatarImageSize = window.innerWidth - 1400;
+      console.log(this.avatarImageSize)
+    }
+  }
 }
 </script>
 
